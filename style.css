@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Trava o tamanho da caixa para o width:360px definido em #container*/
+}
+
+:root {
+  /*Escuro*/
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5); /*Contorno dos botões*/
+  --surface-color: rgba(255, 255, 255, 0.1); /*Cor dentro dos botões*/
+  --surface-color-hover: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /*Quando passa o mouse sobre os botões*/
+  --highlight-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /*Quando passa o mouse sobre ícone de redes sociais*/
+  --switch-bg-url: url(/assets/moon-stars.svg); /*Troca a imagem dentro do botão*/
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5); /*Contorno dos botões*/
+  --surface-color: rgba(0, 0, 0, 0.05); /*Cor dentro dos botões*/
+  --surface-color-hover: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /*Quando passa o mouse sobre os botões*/
+  --highlight-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /*Quando passa o mouse sobre ícone de redes sociais*/
+  --switch-bg-url: url(/assets/sun.svg); /*Troca a imagem dentro do botão*/
+}
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  /*height: 712px; - Sendo removido para ser responsivo
+  border: 10px solid red;
+  
+  margin-right: auto;
+  margin-left: auto;
+  */
+  margin: 56px auto 0px auto; /*Top, right, bottom, left*/
+  padding: 0 24px;
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+  /*display: block; /*Para permitir que o margin:auto centralize a imagem*/
+  /**/
+  /*Normalmente não se coloca altura em CSS e até nem medidas alguma. Isso devido o conteúdo ser normalmente responsivo*/
+  /*margin: auto;*/
+  border-radius: 50%;
+}
+#profile p {
+  font-weight: 500;
+  font-size: 16px; /*padrão do navegador*/
+  line-height: 24px;
+  margin-top: 8px;
+}
+#switch {
+  /*border: 1px solid red; */
+  width: 64px;
+  margin: 4px auto; /*Margin é o que centraliza display block*/
+  position: relative; /*Limita o absoluto a somente a div "switch*/
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur (4px);
+  -webkit-border-radius: 9999px;
+}
+/* links */
+ul {
+  list-style: none;
+
+  display: flex; /*Coloca todos os "li" em uma mesma caixa, na horizontal, pois como é um "inline" ele só ocupa o espaço do elemento em si - diferente de block que ocupa toda a horizontalidade (definida em #container, width: 360px; - e como os "li"s estão dentro de Ul, acabam ocupando toda a linha e espaço disponível com seus elementos*/
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+ul li a {
+  /*"li" É um display block e o "a" é inline*/
+  display: flex;
+  justify-content: center; /*Centralizou o texto no meio horizontal*/
+
+  padding: 16px 24px; /*Espaço interno dos botões*/
+  align-items: center; /*Centralizou o texto no meio vertical*/
+
+  background: var(--surface-color); /*Cor de fundo dos botões*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none; /*Remove o sublinhado do link*/
+  font-weight: 500; /*400 é normal e 500 é bold*/
+
+  /*transition: all 0.5s; Transiciona tudo quando atualiza a página*/
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  /*pseudo-selector. hover: quando passa o mouse sobre*/
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+
+  font-size: 24px; /*Vai alterar o tamanho dos ícones também*/
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14;
+}
