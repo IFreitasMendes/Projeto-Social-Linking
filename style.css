@@ -60,7 +60,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   /*height: 712px; - Sendo removido para ser responsivo
   border: 10px solid red;
   
