@@ -96,7 +96,7 @@ body * {
   width: 64px;
   margin: 4px auto; /*Margin é o que centraliza display block*/
   position: relative; /*Limita o absoluto a somente a div "switch*/
-}
+  }
 
 #switch button {
   width: 32px;
@@ -110,11 +110,19 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  
+  animation: slide-back 0.4s ;
 }
 
 .light #switch button {
-  right: 0;
+  /*right: 0;
   left: initial;
+  */
+  animation: slide-in 0.4s forwards; /*Mantém o botão no final do valor definido em slide-in (50%)*/
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -200,5 +208,25 @@ footer {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* Animation*/
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
