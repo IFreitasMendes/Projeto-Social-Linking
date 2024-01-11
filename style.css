@@ -88,7 +88,7 @@ body * {
 }
 #profile p {
   font-weight: 500;
-  font-size: 16px; /*padrão do navegador*/
+  font-size: 26px; /*padrão do navegador*/
   line-height: 24px;
   margin-top: 8px;
 }
