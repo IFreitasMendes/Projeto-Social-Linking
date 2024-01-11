@@ -202,13 +202,13 @@ footer {
 
 /* Media Queries*/
 
-@media (min-width: 700px) { /*Isso só irá funcionar se tiver essa tag dentro de <head>: <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/
+@media (min-width: 0px) { /*Isso só irá funcionar se tiver essa tag dentro de <head>: <meta name="viewport" content="width=device-width, initial-scale=1.0" />*/
   :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
+    --bg-url: url(./assets/bg_noite.jpg);
   }
 
   .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --bg-url: url(./assets/bg_dia2.jpg);
   }
 }
 
