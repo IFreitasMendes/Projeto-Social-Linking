@@ -150,7 +150,7 @@ ul li a {
   display: flex;
   justify-content: center; /*Centralizou o texto no meio horizontal*/
 
-  padding: 16px 24px; /*Espaço interno dos botões*/
+  padding: 8px 4px; /*Espaço interno dos botões*/
   align-items: center; /*Centralizou o texto no meio vertical*/
 
   background: var(--surface-color); /*Cor de fundo dos botões*/
