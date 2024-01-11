@@ -56,8 +56,9 @@ body {
 }
 
 body * {
-  font-family: "Inter", sans-serif;
+  font-family: 'Ballet', cursive;
   color: var(--text-color);
+  font-size: 30px;
 }
 
 #container {
